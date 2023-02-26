@@ -254,12 +254,10 @@ clap_input_events_t :: struct {
     ctx: *void; // reserved pointer for the list
 
     // returns the number of events in the list
-    Func_size :: #type (list: *clap_input_events_t) -> u32 #c_call;
-    size: Func_size;
+    size: (list: *clap_input_events_t) -> u32 #c_call;
 
     // Don't free the returned event, it belongs to the list
-    Func_get :: #type (list: *clap_input_events_t, index: u32) -> *clap_event_header_t #c_call;
-    get: Func_get;
+    get: (list: *clap_input_events_t, index: u32) -> *clap_event_header_t #c_call;
 }
 
 // Output event list, events must be sorted by time.
@@ -268,6 +266,5 @@ clap_output_events_t :: struct {
 
     // Pushes a copy of the event
     // returns false if the event could not be pushed to the queue (out of memory?)
-    Func_try_push :: #type (list: *clap_output_events_t, event: *clap_event_header_t) -> bool #c_call;
-    try_push: Func_try_push;
+    try_push: (list: *clap_output_events_t, event: *clap_event_header_t) -> bool #c_call;
 }

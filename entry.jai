@@ -39,20 +39,14 @@ clap_plugin_entry_t :: struct {
     //
     // If init() returns false, then the host must not call deinit() nor any other clap
     // related symbols from the DSO.
-    Func_init :: #type (plugin_path: *char) -> bool #c_call;
-    init: Func_init;
+    init: (plugin_path: *char) -> bool #c_call;
 
     // No more calls into the DSO must be made after calling deinit().
-    Func_deinit :: #type () -> void #c_call;
-    deinit: Func_deinit;
+    deinit: () -> void #c_call;
 
     // Get the pointer to a factory. See factory/plugin-factory.h for an example.
     //
     // Returns null if the factory is not provided.
     // The returned pointer must *not* be freed by the caller.
-    Func_get_factory :: #type (factory_id: *char) -> *void #c_call;
-    get_factory: Func_get_factory;
+    get_factory: (factory_id: *char) -> *void #c_call;
 }
-
-// /* Entry point */
-// clap_entry: clap_plugin_entry_t; // is there a way to mark this extern?

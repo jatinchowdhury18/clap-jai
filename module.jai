@@ -14,6 +14,22 @@
 
 #load "factory/plugin-factory.jai";
 
-StringHelpers :: #import,file "jai-helpers/string-helpers.jai";
+#load "ext/audio-ports-config.jai";
+#load "ext/audio-ports.jai";
+#load "ext/event-registry.jai";
+#load "ext/gui.jai";
+#load "ext/latency.jai";
+#load "ext/log.jai";
+#load "ext/note-name.jai";
+#load "ext/note-ports.jai";
+#load "ext/params.jai";
+#load "ext/posix-fd-support.jai";
+#load "ext/render.jai";
+#load "ext/state.jai";
+#load "ext/tail.jai";
+#load "ext/thread-check.jai";
+#load "ext/thread-pool.jai";
+#load "ext/timer-support.jai";
+#load "ext/voice-info.jai";
 
 char :: #type u8;

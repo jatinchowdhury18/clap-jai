@@ -11,65 +11,65 @@
 /////////////////////
 
 // Add this feature if your plugin can process note events and then produce audio
-CLAP_PLUGIN_FEATURE_INSTRUMENT : string : "instrument";
+CLAP_PLUGIN_FEATURE_INSTRUMENT : string : "instrument\0";
 
 // Add this feature if your plugin is an audio effect
-CLAP_PLUGIN_FEATURE_AUDIO_EFFECT : string : "audio-effect";
+CLAP_PLUGIN_FEATURE_AUDIO_EFFECT : string : "audio-effect\0";
 
 // Add this feature if your plugin is a note effect or a note generator/sequencer
-CLAP_PLUGIN_FEATURE_NOTE_EFFECT : string : "note-effect";
+CLAP_PLUGIN_FEATURE_NOTE_EFFECT : string : "note-effect\0";
 
 // Add this feature if your plugin converts audio to notes
-CLAP_PLUGIN_FEATURE_NOTE_DETECTOR : string : "note-detector";
+CLAP_PLUGIN_FEATURE_NOTE_DETECTOR : string : "note-detector\0";
 
 // Add this feature if your plugin is an analyzer
-CLAP_PLUGIN_FEATURE_ANALYZER : string : "analyzer";
+CLAP_PLUGIN_FEATURE_ANALYZER : string : "analyzer\0";
 
 /////////////////////////
 // Plugin sub-category //
 /////////////////////////
 
-CLAP_PLUGIN_FEATURE_SYNTHESIZER : string : "synthesizer";
-CLAP_PLUGIN_FEATURE_SAMPLER : string : "sampler";
-CLAP_PLUGIN_FEATURE_DRUM : string : "drum"; // For single drum
-CLAP_PLUGIN_FEATURE_DRUM_MACHINE : string : "drum-machine";
+CLAP_PLUGIN_FEATURE_SYNTHESIZER : string : "synthesizer\0";
+CLAP_PLUGIN_FEATURE_SAMPLER : string : "sampler\0";
+CLAP_PLUGIN_FEATURE_DRUM : string : "drum\0"; // For single drum
+CLAP_PLUGIN_FEATURE_DRUM_MACHINE : string : "drum-machine\0";
 
-CLAP_PLUGIN_FEATURE_FILTER : string : "filter";
-CLAP_PLUGIN_FEATURE_PHASER : string : "phaser";
-CLAP_PLUGIN_FEATURE_EQUALIZER : string : "equalizer";
-CLAP_PLUGIN_FEATURE_DEESSER : string : "de-esser";
-CLAP_PLUGIN_FEATURE_PHASE_VOCODER : string : "phase-vocoder";
-CLAP_PLUGIN_FEATURE_GRANULAR : string : "granular";
-CLAP_PLUGIN_FEATURE_FREQUENCY_SHIFTER : string : "frequency-shifter";
-CLAP_PLUGIN_FEATURE_PITCH_SHIFTER : string : "pitch-shifter";
+CLAP_PLUGIN_FEATURE_FILTER : string : "filter\0";
+CLAP_PLUGIN_FEATURE_PHASER : string : "phaser\0";
+CLAP_PLUGIN_FEATURE_EQUALIZER : string : "equalizer\0";
+CLAP_PLUGIN_FEATURE_DEESSER : string : "de-esser\0";
+CLAP_PLUGIN_FEATURE_PHASE_VOCODER : string : "phase-vocoder\0";
+CLAP_PLUGIN_FEATURE_GRANULAR : string : "granular\0";
+CLAP_PLUGIN_FEATURE_FREQUENCY_SHIFTER : string : "frequency-shifter\0";
+CLAP_PLUGIN_FEATURE_PITCH_SHIFTER : string : "pitch-shifter\0";
 
-CLAP_PLUGIN_FEATURE_DISTORTION : string : "distortion";
-CLAP_PLUGIN_FEATURE_TRANSIENT_SHAPER : string : "transient-shaper";
-CLAP_PLUGIN_FEATURE_COMPRESSOR : string : "compressor";
-CLAP_PLUGIN_FEATURE_LIMITER : string : "limiter";
+CLAP_PLUGIN_FEATURE_DISTORTION : string : "distortion\0";
+CLAP_PLUGIN_FEATURE_TRANSIENT_SHAPER : string : "transient-shaper\0";
+CLAP_PLUGIN_FEATURE_COMPRESSOR : string : "compressor\0";
+CLAP_PLUGIN_FEATURE_LIMITER : string : "limiter\0";
 
-CLAP_PLUGIN_FEATURE_FLANGER : string : "flanger";
-CLAP_PLUGIN_FEATURE_CHORUS : string : "chorus";
-CLAP_PLUGIN_FEATURE_DELAY : string : "delay";
-CLAP_PLUGIN_FEATURE_REVERB : string : "reverb";
+CLAP_PLUGIN_FEATURE_FLANGER : string : "flanger\0";
+CLAP_PLUGIN_FEATURE_CHORUS : string : "chorus\0";
+CLAP_PLUGIN_FEATURE_DELAY : string : "delay\0";
+CLAP_PLUGIN_FEATURE_REVERB : string : "reverb\0";
 
-CLAP_PLUGIN_FEATURE_TREMOLO : string : "tremolo";
-CLAP_PLUGIN_FEATURE_GLITCH : string : "glitch";
+CLAP_PLUGIN_FEATURE_TREMOLO : string : "tremolo\0";
+CLAP_PLUGIN_FEATURE_GLITCH : string : "glitch\0";
 
-CLAP_PLUGIN_FEATURE_UTILITY : string : "utility";
-CLAP_PLUGIN_FEATURE_PITCH_CORRECTION : string : "pitch-correction";
-CLAP_PLUGIN_FEATURE_RESTORATION : string : "restoration"; // repair the sound
+CLAP_PLUGIN_FEATURE_UTILITY : string : "utility\0";
+CLAP_PLUGIN_FEATURE_PITCH_CORRECTION : string : "pitch-correction\0";
+CLAP_PLUGIN_FEATURE_RESTORATION : string : "restoration\0"; // repair the sound
 
-CLAP_PLUGIN_FEATURE_MULTI_EFFECTS : string : "multi-effects";
+CLAP_PLUGIN_FEATURE_MULTI_EFFECTS : string : "multi-effects\0";
 
-CLAP_PLUGIN_FEATURE_MIXING : string : "mixing";
-CLAP_PLUGIN_FEATURE_MASTERING : string : "mastering";
+CLAP_PLUGIN_FEATURE_MIXING : string : "mixing\0";
+CLAP_PLUGIN_FEATURE_MASTERING : string : "mastering\0";
 
 ////////////////////////
 // Audio Capabilities //
 ////////////////////////
 
-CLAP_PLUGIN_FEATURE_MONO : string : "mono";
-CLAP_PLUGIN_FEATURE_STEREO : string : "stereo";
-CLAP_PLUGIN_FEATURE_SURROUND : string : "surround";
-CLAP_PLUGIN_FEATURE_AMBISONIC : string : "ambisonic";
+CLAP_PLUGIN_FEATURE_MONO : string : "mono\0";
+CLAP_PLUGIN_FEATURE_STEREO : string : "stereo\0";
+CLAP_PLUGIN_FEATURE_SURROUND : string : "surround\0";
+CLAP_PLUGIN_FEATURE_AMBISONIC : string : "ambisonic\0";

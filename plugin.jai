@@ -39,14 +39,12 @@ clap_plugin_t :: struct {
     // If init returns false, the host must destroy the plugin instance.
     // If init returns true, then the plugin is initialized and in the deactivated state.
     // [main-thread]
-    Func_init :: #type (plugin: *clap_plugin_t) -> bool #c_call;
-    init: Func_init;
+    init: (plugin: *clap_plugin_t) -> bool #c_call;
 
     // Free the plugin and its resources.
     // It is required to deactivate the plugin prior to this call.
     // [main-thread & !active]
-    Func_destroy :: #type (plugin: *clap_plugin_t) -> void #c_call;
-    destroy: Func_destroy;
+    destroy: (plugin: *clap_plugin_t) -> void #c_call;
 
     // Activate and deactivate the plugin.
     // In this call the plugin may allocate memory and prepare everything needed for the process
@@ -55,22 +53,18 @@ clap_plugin_t :: struct {
     // Once activated the latency and port configuration must remain constant, until deactivation.
     //
     // [main-thread & !active_state]
-    Func_activate :: #type (plugin: *clap_plugin_t, sample_rate: float64, min_frames_count: u32, max_frames_count: u32) -> bool #c_call;
-    activate: Func_activate;
+    activate: (plugin: *clap_plugin_t, sample_rate: float64, min_frames_count: u32, max_frames_count: u32) -> bool #c_call;
 
     // [main-thread & active_state]
-    Func_deactivate :: #type (plugin: *clap_plugin_t) -> void #c_call;
-    deactivate: Func_deactivate;
+    deactivate: (plugin: *clap_plugin_t) -> void #c_call;
 
     // Call start processing before processing.
     // [audio-thread & active_state & !processing_state]
-    Func_start_processing :: #type (plugin: *clap_plugin_t) -> bool #c_call;
-    start_processing: Func_start_processing;
+    start_processing: (plugin: *clap_plugin_t) -> bool #c_call;
 
     // Call stop processing before sending the plugin to sleep.
     // [audio-thread & active_state & processing_state]
-    Func_stop_processing :: #type (plugin: *clap_plugin_t) -> void #c_call;
-    stop_processing: Func_stop_processing;
+    stop_processing: (plugin: *clap_plugin_t) -> void #c_call;
 
     // - Clears all buffers, performs a full reset of the processing state (filters, oscillators,
     //   enveloppes, lfo, ...) and kills all voices.
@@ -78,27 +72,23 @@ clap_plugin_t :: struct {
     // - clap_process.steady_time may jump backward.
     //
     // [audio-thread & active_state]
-    Func_reset :: #type (plugin: *clap_plugin_t) -> void #c_call;
-    reset: Func_reset;
+    reset: (plugin: *clap_plugin_t) -> void #c_call;
 
     // process audio, events, ...
     // All the pointers coming from clap_process_t and its nested attributes,
     // are valid until process() returns.
     // [audio-thread & active_state & processing_state]
-    Func_process :: #type (plugin: *clap_plugin_t, process: *clap_process_t) -> clap_process_status #c_call;
-    process: Func_process;
+    process: (plugin: *clap_plugin_t, process: *clap_process_t) -> clap_process_status #c_call;
 
     // Query an extension.
     // The returned pointer is owned by the plugin.
     // It is forbidden to call it before plugin->init().
     // You can call it within plugin->init() call, and after.
     // [thread-safe]
-    Func_get_extension :: #type (plugin: *clap_plugin_t, id: *char) -> *void #c_call;
-    get_extension: Func_get_extension;
+    get_extension: (plugin: *clap_plugin_t, id: *char) -> *void #c_call;
 
     // Called by the host on the main thread in response to a previous call to:
     //   host->request_callback(host);
     // [main-thread]
-    Func_on_main_thread :: #type (plugin: *clap_plugin_t) -> void #c_call;
-    on_main_thread: Func_on_main_thread;
+    on_main_thread: (plugin: *clap_plugin_t) -> void #c_call;
 };

@@ -15,23 +15,19 @@ clap_host_t :: struct {
     // It is forbidden to call it before plugin->init().
     // You can call it within plugin->init() call, and after.
     // [thread-safe]
-    Func_get_extension :: #type (host: *clap_host_t, extension_id: *char) -> *void #c_call;
-    get_extension: Func_get_extension;
+    get_extension: (host: *clap_host_t, extension_id: *char) -> *void #c_call;
  
     // Request the host to deactivate and then reactivate the plugin.
     // The operation may be delayed by the host.
     // [thread-safe]
-    Func_request_restart :: #type (host: *clap_host_t) -> void #c_call;
-    request_restart: Func_request_restart;
+    request_restart: (host: *clap_host_t) -> void #c_call;
  
     // Request the host to activate and start processing the plugin.
     // This is useful if you have external IO and need to wake up the plugin from "sleep".
     // [thread-safe]
-    Func_request_process :: #type (host: *clap_host_t) -> void #c_call;
-    request_process: Func_request_process;
+    request_process: (host: *clap_host_t) -> void #c_call;
  
     // Request the host to schedule a call to plugin->on_main_thread(plugin) on the main thread.
     // [thread-safe]
-    Func_request_callback :: #type (host: *clap_host_t) -> void;
-    request_callback: Func_request_callback;
+    request_callback: (host: *clap_host_t) -> void;
 }

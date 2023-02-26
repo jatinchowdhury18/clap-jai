@@ -1,6 +1,6 @@
 // Use it to retrieve const clap_plugin_factory_t* from
 // clap_plugin_entry.get_factory()
-CLAP_PLUGIN_FACTORY_ID :: "clap.plugin-factory";
+CLAP_PLUGIN_FACTORY_ID :: "clap.plugin-factory\0";
 
 // Every method must be thread-safe.
 // It is very important to be able to scan the plugin as quickly as possible.
