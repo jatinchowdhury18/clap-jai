@@ -113,7 +113,7 @@ CLAP_EVENT_MIDI2 : u16 : 12;      // raw midi 2 event; clap_event_midi2
 clap_event_note_t :: struct {
     header: clap_event_header_t;
 
-   note_id: s32; // -1 if unspecified, otherwise >=0
+    note_id: s32; // -1 if unspecified, otherwise >=0
     port_index: s16;
     channel: s16;  // 0..15
     key: s16;      // 0..127
