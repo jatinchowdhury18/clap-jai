@@ -98,7 +98,7 @@ clap_plugin_gui_t :: struct {
     // The const char **api variable should be explicitly assigned as a pointer to
     // one of the CLAP_WINDOW_API_ constants defined above, not strcopied.
     // [main-thread]
-    get_preferred_api: (plugin: *clap_plugin_t, api: **char, is_floating: bool) -> bool #c_call;
+    get_preferred_api: (plugin: *clap_plugin_t, api: **char, is_floating: *bool) -> bool #c_call;
 
     // Create and allocate all resources necessary for the gui.
     //
@@ -140,7 +140,7 @@ clap_plugin_gui_t :: struct {
 
     // Returns true if the plugin can provide hints on how to resize the window.
     // [main-thread]
-    get_resize_hint: (plugin: *clap_plugin_t, hints: *clap_gui_resize_hints_t) -> bool #c_call;
+    get_resize_hints: (plugin: *clap_plugin_t, hints: *clap_gui_resize_hints_t) -> bool #c_call;
 
     // If the plugin gui is resizable, then the plugin will calculate the closest
     // usable size which fits in the given size.
@@ -173,7 +173,7 @@ clap_plugin_gui_t :: struct {
     // Hide the window, this method does not free the resources, it just hides
     // the window content. Yet it may be a good idea to stop painting timers.
     // [main-thread]
-    hide: (plugin: clap_plugin_t) -> bool #c_call;
+    hide: (plugin: *clap_plugin_t) -> bool #c_call;
 }
 
 clap_host_gui_t :: struct {
