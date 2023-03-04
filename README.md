@@ -4,6 +4,8 @@
 
 Currently up-to-date with CLAP 1.1.7.
 
+This code has only been lightly tested, so please report any bugs you might find!
+
 ## LICENSE
 
 This module is licensed under the MIT license.
