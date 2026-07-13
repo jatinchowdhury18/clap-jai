@@ -20,7 +20,11 @@
 /// extension where all busses can be retrieved in the same way as in the audio-port extension.
 
 CLAP_EXT_AUDIO_PORTS_CONFIG :: "clap.audio-ports-config\0";
-CLAP_EXT_AUDIO_PORTS_CONFIG_INFO :: "clap.audio-ports-config-info/draft-0\0";
+CLAP_EXT_AUDIO_PORTS_CONFIG_INFO :: "clap.audio-ports-config-info/1\0";
+
+// The latest draft is 100% compatible.
+// This compat ID may be removed in 2026.
+CLAP_EXT_AUDIO_PORTS_CONFIG_INFO_COMPAT :: "clap.audio-ports-config-info/draft-0\0";
 
 // Minimalistic description of ports configuration
 clap_audio_ports_config_t :: struct {
@@ -49,7 +53,7 @@ clap_plugin_audio_ports_config_t :: struct {
 
     // gets information about a configuration
     // [main-thread]
-    get: (plugin: *clap_plugin_t, index: u32, config: clap_audio_ports_config_t) -> bool #c_call;
+    get: (plugin: *clap_plugin_t, index: u32, config: *clap_audio_ports_config_t) -> bool #c_call;
 
     // selects the configuration designated by id
     // returns true if the configuration could be applied.
@@ -64,7 +68,7 @@ clap_plugin_audio_ports_config_info_t :: struct {
     // layout isn't part of the config list.
     //
     // [main-thread]
-    current_config: (plugin: clap_plugin_t) -> clap_id #c_call;
+    current_config: (plugin: *clap_plugin_t) -> clap_id #c_call;
 
     // Get info about about an audio port, for a given config_id.
     // This is analogous to clap_plugin_audio_ports.get().

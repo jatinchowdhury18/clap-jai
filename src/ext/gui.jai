@@ -49,6 +49,9 @@ CLAP_WINDOW_API_WIN32 :: "win32\0";
 // uses logical size, don't call clap_plugin_gui->set_scale()
 CLAP_WINDOW_API_COCOA :: "cocoa\0";
 
+// uses logical size, don't call clap_plugin_gui->set_scale()
+CLAP_WINDOW_API_UIKIT :: "uikit\0";
+
 // uses physical size
 // embed using https://specifications.freedesktop.org/xembed-spec/xembed-spec-latest.html
 CLAP_WINDOW_API_X11 :: "x11\0";
@@ -59,12 +62,14 @@ CLAP_WINDOW_API_WAYLAND :: "wayland\0";
 
 clap_hwnd :: #type *void;
 clap_nsview :: #type *void;
+clap_uiview :: #type *void;
 clap_xwnd :: #type u64;
 
 /// Defined as an anonymous union in [`clap_window`] in the C-version.
 clap_window_handle :: union {
     cocoa: clap_nsview;
-    xll: clap_xwnd;
+    uikit: clap_uiview;
+    x11: clap_xwnd;
     win32: clap_hwnd;
     ptr: *void; // for anything defined outside of clap
 }

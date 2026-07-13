@@ -26,7 +26,7 @@ clap_host_posix_fd_support_t :: struct {
     register_fd: (host: *clap_host_t, fd: s32, flags: clap_posix_fd_flags_t) -> bool #c_call;
 
     // [main-thread]
-    modify_fd: (host: clap_host_t, fd: s32, flags: clap_posix_fd_flags_t) -> bool #c_call;
+    modify_fd: (host: *clap_host_t, fd: s32, flags: clap_posix_fd_flags_t) -> bool #c_call;
 
     // [main-thread]
     unregister_fd: (host: *clap_host_t, fd: s32) -> bool #c_call;

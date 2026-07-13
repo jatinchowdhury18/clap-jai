@@ -10,26 +10,39 @@
 #load "src/process.jai";
 #load "src/stream.jai";
 #load "src/string-sizes.jai";
+#load "src/timestamp.jai";
+#load "src/universal-plugin-id.jai";
 #load "src/version.jai";
 
 #load "src/factory/plugin-factory.jai";
+#load "src/factory/preset-discovery.jai";
 
+#load "src/ext/ambisonic.jai";
+#load "src/ext/audio-ports-activation.jai";
 #load "src/ext/audio-ports-config.jai";
 #load "src/ext/audio-ports.jai";
+#load "src/ext/configurable-audio-ports.jai";
+#load "src/ext/context-menu.jai";
 #load "src/ext/event-registry.jai";
 #load "src/ext/gui.jai";
 #load "src/ext/latency.jai";
 #load "src/ext/log.jai";
 #load "src/ext/note-name.jai";
 #load "src/ext/note-ports.jai";
+#load "src/ext/param-indication.jai";
 #load "src/ext/params.jai";
 #load "src/ext/posix-fd-support.jai";
+#load "src/ext/preset-load.jai";
+#load "src/ext/remote-controls.jai";
 #load "src/ext/render.jai";
+#load "src/ext/state-context.jai";
 #load "src/ext/state.jai";
+#load "src/ext/surround.jai";
 #load "src/ext/tail.jai";
 #load "src/ext/thread-check.jai";
 #load "src/ext/thread-pool.jai";
 #load "src/ext/timer-support.jai";
+#load "src/ext/track-info.jai";
 #load "src/ext/voice-info.jai";
 
 char :: #type u8;

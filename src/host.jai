@@ -29,5 +29,5 @@ clap_host_t :: struct {
  
     // Request the host to schedule a call to plugin->on_main_thread(plugin) on the main thread.
     // [thread-safe]
-    request_callback: (host: *clap_host_t) -> void;
+    request_callback: (host: *clap_host_t) -> void #c_call;
 }

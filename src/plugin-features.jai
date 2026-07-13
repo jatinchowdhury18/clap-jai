@@ -46,6 +46,8 @@ CLAP_PLUGIN_FEATURE_PITCH_SHIFTER : string : "pitch-shifter\0";
 CLAP_PLUGIN_FEATURE_DISTORTION : string : "distortion\0";
 CLAP_PLUGIN_FEATURE_TRANSIENT_SHAPER : string : "transient-shaper\0";
 CLAP_PLUGIN_FEATURE_COMPRESSOR : string : "compressor\0";
+CLAP_PLUGIN_FEATURE_EXPANDER : string : "expander\0";
+CLAP_PLUGIN_FEATURE_GATE : string : "gate\0";
 CLAP_PLUGIN_FEATURE_LIMITER : string : "limiter\0";
 
 CLAP_PLUGIN_FEATURE_FLANGER : string : "flanger\0";
